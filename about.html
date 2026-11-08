@@ -33,7 +33,6 @@
   .bio-text[hidden] { display: none; }
   .bio-text.show { animation: bio-in 0.3s ease; }
   @keyframes bio-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .about .contact-line { margin-top: 26px; }
   @media (max-width: 560px) {
     .dialogue.about-window { padding: 28px 20px 38px; }
@@ -54,11 +53,22 @@
 </header>
 <main id="main">
 <div class="page-title">
-  <h1>About</h1>
+  <h1><span class="t">About</span></h1>
 </div>
 <div class="wrap">
   <div class="about">
-    <div class="portrait"><img src="assets/img/marie-brache.jpg" width="624" height="865" alt="Portrait of Marie Brache"></div>
+    <div class="portrait"><img src="assets/img/marie-brache.jpg" width="624" height="865" alt="Portrait of Marie Brache">
+      <section class="window status" aria-labelledby="status-h">
+        <h2 id="status-h">Status</h2>
+        <dl>
+          <dt>Class</dt><dd>Digital media artist &amp; designer</dd>
+          <dt>Home</dt><dd>Oviedo, Florida</dd>
+          <dt>Guild</dt><dd>University of Central Florida, since 2017</dd>
+          <dt>Quest</dt><dd>M.A. in Digital Media; an original turn-based RPG in Unreal Engine</dd>
+          <dt>Equip</dt><dd><ul class="equip"><li>Photoshop</li><li>Illustrator</li><li>3ds Max</li><li>Unreal Engine</li></ul></dd>
+        </dl>
+      </section>
+    </div>
     <div>
       <section class="dialogue about-window" aria-label="Biography">
         <p class="speaker">Marie Brache</p>

@@ -27,6 +27,7 @@
     }
     return out;
   }
+  function catClass(w) { return w.category === "Personal art" ? "cat-personal" : "cat-professional"; }
   function metaText(w) { return w.year ? w.category + ", " + w.year : w.category; }
 
   function card(w) {
@@ -39,7 +40,7 @@
       el("span", { class: "title cursor-item", text: w.title }),
       el("span", { class: "meta", text: metaText(w) })
     ]);
-    return el("a", { class: "card", href: "work.html?id=" + encodeURIComponent(w.slug) }, [frame, cap]);
+    return el("a", { class: "card " + catClass(w), href: "work.html?id=" + encodeURIComponent(w.slug) }, [frame, cap]);
   }
 
   /* ---------- home: featured ---------- */
@@ -118,7 +119,7 @@
         facts.appendChild(el("div", {}, [el("dt", { text: f[0] }), el("dd", { text: f[1] })]));
       });
       var info = el("div", { class: "info" }, [
-        el("p", { class: "kind", text: w.category }),
+        el("p", { class: "kind " + catClass(w), text: w.category }),
         el("h1", { text: w.title }),
         el("p", { text: w.description }),
         facts
