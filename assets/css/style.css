@@ -387,6 +387,8 @@ p { margin: 0 0 1em; }
 /* ---------- about ---------- */
 .about { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(28px, 5vw, 56px); align-items: start; margin-top: 34px; }
 .about .portrait img {
+  /* show the photo as a head-and-shoulders portrait */
+  width: 100%; aspect-ratio: 624 / 865; object-fit: cover; object-position: 50% 6%;
   border-radius: 10px; border: 3px solid var(--frame);
   box-shadow: 0 0 0 2px var(--frame-dark), 0 0 0 6px var(--violet), 0 0 34px 6px rgba(185, 147, 255, .45);
 }
