@@ -171,10 +171,13 @@ p { margin: 0 0 1em; }
   box-shadow: 0 0 12px var(--cyan);
 }
 .wordmark:hover { color: var(--gold); }
+/* gradient goes on the text span only: clipping the whole link to its text
+   would also clip the gem's glow where it spills past the link's edge */
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .wordmark { background-image: linear-gradient(90deg, #fff1b8, var(--gold) 35%, var(--coral) 70%, var(--rose)); }
-  .wordmark { -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .wordmark:hover { color: transparent; }
+  .wordmark .t {
+    background-image: linear-gradient(90deg, #fff1b8, var(--gold) 35%, var(--coral) 70%, var(--rose));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
 }
 .menu {
   display: flex; gap: clamp(26px, 4vw, 40px);
